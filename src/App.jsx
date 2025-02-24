@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import shuffle from './utilities/shuffle'
 import './App.css'
 import Card from './components/Card';
+import Header from './components/Header'
 
 function App() {
   const [cards, setCards] = useState(shuffle);
@@ -39,7 +40,7 @@ function App() {
       // check if cards match
       if (pickOne.image === pickTwo.image) {
         setCards((prevCards) => {
-          return prevCards.map((cards) => {
+          return prevCards.map((card) => {
             if (card.image === pickOne.image) {
               // Update card property to reflect match
               return { ...card, matched: true };
@@ -81,6 +82,9 @@ function App() {
 
   return (
     <>
+
+      <Header handleNewGame={handleNewGame} wins={wins} />
+
       <div className="grid">
         {cards.map((card) => {
           const { image, id, matched } = card;

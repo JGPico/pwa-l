@@ -17,3 +17,5 @@ Currently, two official plugins are available:
 <a href="https://www.flaticon.com/free-icons/rum" title="rum icons">Rum icons created by Smashicons - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/bear" title="bear icons">Bear icons created by ultimatearm - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/carrot" title="carrot icons">Carrot icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/edit-tool" title="edit tool icons">Edit tool icons created by Icon Desai - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/change" title="change icons">Change icons created by Uniconlabs - Flaticon</a>
