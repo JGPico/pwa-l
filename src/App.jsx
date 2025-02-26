@@ -3,6 +3,7 @@ import shuffle from './utilities/shuffle'
 import './App.css'
 import Card from './components/Card';
 import Header from './components/Header'
+import useAppBadge from './hooks/useAppBadge';
 
 function App() {
   const [cards, setCards] = useState(shuffle);
@@ -10,6 +11,7 @@ function App() {
   const [pickTwo, setPickTwo] = useState(null); // Second Selection
   const [disabled, setDisabled] = useState(false); // Delay handler
   const [wins, setWins] = useState(0); // Win streak
+  const [setBadge, clearBadge] = useAppBadge(); // Hanndles app badge
 
   // Handle card selection
   const handleClick = (card) => {
@@ -18,6 +20,7 @@ function App() {
     }
   };
 
+  // Handle one turn, ie two clicks
   const handleTurn = () => {
     setPickOne(null);
     setPickTwo(null);
@@ -26,6 +29,7 @@ function App() {
 
   // Start over
   const handleNewGame = () => {
+    clearBadge();
     setWins(0);
     handleTurn();
     setCards(shuffle);
@@ -76,6 +80,7 @@ function App() {
       console.log("You win!");
       setWins(wins + 1);
       handleTurn();
+      setBadge();
       setCards(shuffle);
     }
   }, [cards, wins])
